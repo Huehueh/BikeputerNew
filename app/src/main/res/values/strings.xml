@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BikeputerNew</string>
+    <string name="main_screen">"Main Screen"</string>
+    <string name="settings">Settings</string>
+    <string name="statistics">Statistics</string>
+    <string name="end_route">Zakończ trasę</string>
+    <string name="device_name">Nazwa urządzenia</string>
+
+    <string name="distance">Pokonany dystans</string>
+    <string name="max_velocity">Maksymalna prędkość</string>
+    <string name="av_velocity">Średnia prędkość</string>
+    <string name="trip_saved">Wycieczka zapisana</string>
+
+</resources>
