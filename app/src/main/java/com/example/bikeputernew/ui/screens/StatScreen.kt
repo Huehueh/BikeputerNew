@@ -55,13 +55,13 @@ fun StatScreen(bikeViewModel: BikeViewModel) {
                 Text(text = "NO DATA")
             }
             else {
-                Button(onClick = {
-                    scope.launch {
-                        bikeViewModel.deleteAllTrips()
-                    }
-                }) {
-                    Text(text = "Usun wszystkie dane")
-                }
+//                Button(onClick = {
+//                    scope.launch {
+//                        bikeViewModel.deleteAllTrips()
+//                    }
+//                }) {
+//                    Text(text = "Usun wszystkie dane")
+//                }
                 BarChart(
                     barChartData = BarChartData(
                         bars = distances
