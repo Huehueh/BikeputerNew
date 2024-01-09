@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.bikeputernew.values.Constants
 
-@Entity(tableName = Constants.DATABASE_TABLE)
+@Entity(tableName = Constants.TRIP_DB_TABLE)
 data class Trip (
     @PrimaryKey val timeStart: Long,
     var timeEnd: Long = 0,

@@ -9,11 +9,15 @@ import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import com.example.bikeputernew.datastore.database.BikeViewModel
+import com.example.bikeputernew.datastore.database.RDViewModel
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
 
-class BroadcastReceiver(val bikeViewModel: BikeViewModel) : BroadcastReceiver() {
+class BroadcastReceiver(
+    val bikeViewModel: BikeViewModel,
+    val researchDataViewModel: RDViewModel
+) : BroadcastReceiver() {
 
     private val TAG = "BleReceiver"
     private var connected by bikeViewModel.connected
@@ -43,6 +47,12 @@ class BroadcastReceiver(val bikeViewModel: BikeViewModel) : BroadcastReceiver() 
             else {
                 Log.w(TAG, "unable to parse velocity & distance from BLE message")
             }
+        }
+        else if (data.containsKey(Uuid.WHEEL_TIMESTAMP.stringValue))
+        {
+            Log.i(TAG, "Wheel timestamp")
+            val researchData = data.get((Uuid.WHEEL_TIMESTAMP.stringValue)) as ByteArray
+            researchDataViewModel.addNewResearchData(researchData)
         }
     }
 

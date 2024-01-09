@@ -19,7 +19,8 @@ enum class Uuid(val stringValue: String) {
     NOTIFICATION("00002902-0000-1000-8000-00805f9b34fb"),
     TURN_SIGNAL("b4a2ba47-25f7-46b8-b104-821f859f8071"),
     MOVEMENT("b4a2ba47-25f7-46b8-b104-821f859f8072"),
-    RESET("b4a2ba47-25f7-46b8-b104-821f859f8073");
+    RESET("b4a2ba47-25f7-46b8-b104-821f859f8073"),
+    WHEEL_TIMESTAMP("b4a2ba47-25f7-46b8-b104-821f859f8085");
 
     fun ToUUID(): UUID {
         return UUID.fromString(stringValue)

@@ -27,5 +27,9 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideDao(database: BikeDatabase): TripDao = database.tripDao()
+    fun provideTripDao(database: BikeDatabase): TripDao = database.tripDao()
+
+    @Singleton
+    @Provides
+    fun provideResearchDataDao(database: BikeDatabase): ResearchDataDao = database.researchDataDao()
 }

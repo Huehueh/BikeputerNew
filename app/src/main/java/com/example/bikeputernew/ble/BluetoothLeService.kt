@@ -99,7 +99,7 @@ class BluetoothLeService : Service() {
                 Log.i(TAG, "service discovered")
 
                 broadcastUpdate(ACTION_GATT_SERVICES_DISCOVERED)
-                notificationUuids = LinkedList(listOf(Uuid.MOVEMENT, Uuid.TURN_SIGNAL))
+                notificationUuids = LinkedList(listOf(Uuid.MOVEMENT, Uuid.TURN_SIGNAL, Uuid.WHEEL_TIMESTAMP))
                 enableNotifications(bluetoothGatt?.services) // gatt.services?
                 // czytam ostatni pomiar
 //                readData(Uuid.MOVEMENT)
@@ -116,6 +116,7 @@ class BluetoothLeService : Service() {
             if(notificationUuids.size == 0) return
 
             val uuid = notificationUuids.remove().ToUUID()
+            Log.i(TAG, notificationUuids.toString())
             gattServices.forEach{ gattService ->
                 gattService!!.characteristics.forEach{ gattCharacteristic ->
                     try {

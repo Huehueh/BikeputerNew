@@ -21,5 +21,5 @@ interface TripDao {
     fun getCurrentTrip(): Flow<Trip>
 
     @Query("DELETE FROM trip_table")
-    fun deleteAll()
+    fun deleteAllTrips()
 }
