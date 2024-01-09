@@ -15,7 +15,7 @@ fun CurrentTripWidget(currentTrip: Trip?) {
         Column {
             Text(text = "${stringResource(id = R.string.distance)} ${String.format("%.1f", currentTrip.distance)} m")
             Text(text = "${stringResource(id = R.string.max_velocity)}  ${String.format("%.1f", currentTrip.maxVelocity)} km/h")
-            Text(text = "${stringResource(id = R.string.max_velocity)}  ${String.format("%.1f", currentTrip.avVelocity)} km/h")
+            Text(text = "${stringResource(id = R.string.av_velocity)}  ${String.format("%.1f", currentTrip.avVelocity)} km/h")
         }
     }
 }
