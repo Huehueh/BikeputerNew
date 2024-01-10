@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.bikeputernew
 
 import android.Manifest
@@ -22,6 +24,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.bikeputernew.ble.BleDeviceManager
 import com.example.bikeputernew.ble.BroadcastReceiver
 import com.example.bikeputernew.datastore.database.BikeViewModel
+import com.example.bikeputernew.datastore.database.RDViewModel
 import com.example.bikeputernew.ui.SetupNavigation
 import com.example.bikeputernew.ui.theme.BikeButerBetterTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,8 +35,9 @@ class MainActivity : ComponentActivity() {
     private val TAG = "BikePuterActivity"
     private lateinit var navController: NavHostController
     private val bikeViewModel: BikeViewModel by viewModels()
+    private val researchDataViewModel: RDViewModel by viewModels()
     private val broadcastReceiver by lazy {
-        BroadcastReceiver(bikeViewModel = bikeViewModel)
+        BroadcastReceiver(bikeViewModel = bikeViewModel, researchDataViewModel = researchDataViewModel)
     }
 
     // BLE
