@@ -12,5 +12,6 @@
     <string name="max_velocity">Maksymalna prędkość</string>
     <string name="av_velocity">Średnia prędkość</string>
     <string name="trip_saved">Wycieczka zapisana</string>
+    <string name="save_rd">Zapisz research data do pliku csv</string>
 
 </resources>
