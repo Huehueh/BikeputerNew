@@ -7,6 +7,8 @@
     <string name="end_trip_question">Czy zakończyć trasę?</string>
     <string name="device_name">Nazwa urządzenia</string>
     <string name="ok">Ok</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
 
     <string name="distance">Pokonany dystans</string>
     <string name="max_velocity">Maksymalna prędkość</string>
