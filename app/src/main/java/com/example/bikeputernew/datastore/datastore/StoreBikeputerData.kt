@@ -21,18 +21,31 @@ class StoreBikeputerData(private val context: Context) {
 
     companion object {
         private val Context.datastore : DataStore<Preferences> by preferencesDataStore(Constants.PREFERENCES)
-        val DEVICE_NAME = stringPreferencesKey("bikeputer_name")
+        val device_name = stringPreferencesKey(Constants.DEVICE_NAME)
+        val db_user = stringPreferencesKey(Constants.DB_USER)
     }
 
-    val getDeviceName: Flow<String?> = context.datastore.data.map { preferences ->
+    val getDeviceName: Flow<String> = context.datastore.data.map { preferences ->
         Log.i(TAG, "getting device name from preferences")
-        preferences[DEVICE_NAME] ?: Constants.DEVICE_DEFAULT_NAME
+        preferences[device_name] ?: Constants.DEVICE_DEFAULT_NAME
     }
 
     suspend fun saveDeviceName(name: String) {
         Log.i(TAG, "saving $name to preferences as device name")
         context.datastore.edit { preferences ->
-            preferences[DEVICE_NAME] = name
+            preferences[device_name] = name
+        }
+    }
+
+    val getDbUser: Flow<String> = context.datastore.data.map { preferences ->
+        Log.i(TAG, "getting db user from preferences")
+        preferences[db_user] ?: Constants.DEFAULT_DB_USER
+    }
+
+    suspend fun saveDbUser(name: String) {
+        Log.i(TAG, "saving $name to preferences as db user")
+        context.datastore.edit { preferences ->
+            preferences[db_user] = name
         }
     }
 }
